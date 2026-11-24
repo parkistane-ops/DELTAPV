@@ -1,0 +1,7 @@
+
+{
+  "appId": "com.deltapv.app",
+  "appName": "DELTAPV",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
