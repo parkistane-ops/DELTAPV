@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DELTAPV</title>
+<style>
+body {
+  margin:0;
+  background:#061629;
+  color:white;
+  font-family:Arial,sans-serif;
+  padding:20px;
+}
+.app {max-width:440px;margin:auto}
+header {text-align:center;padding:25px}
+h1 {color:#27b9ff;font-size:36px}
+h1 span {color:#36e58a}
+.card {
+  background:#102b43;
+  border-radius:18px;
+  padding:22px;
+  margin:15px 0;
+}
+.status {text-align:center;padding:25px}
+.circle {
+  width:110px;height:110px;
+  border-radius:50%;
+  background:#123f58;
+  border:4px solid #29bdff;
+  display:grid;
+  place-items:center;
+  margin:20px auto;
+  font-size:38px;
+}
+button {
+  background:#087bdf;
+  color:white;
+  border:0;
+  border-radius:30px;
+  padding:16px;
+  width:100%;
+  font-size:17px;
+  font-weight:bold;
+}
+.grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.value {font-size:23px;color:#39e58b}
+small {color:#a8c5d9}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+<h1>DELTA<span>PV</span></h1>
+<p>YOUR INTERNET. YOUR FREEDOM.</p>
+</header>
+
+<div class="card status">
+<h3 id="status">NOT CONNECTED</h3>
+<div class="circle">🛡️</div>
+<button onclick="toggle()" id="btn">CONNECT</button>
+<p>DELTAPV connection dashboard</p>
+</div>
+
+<div class="grid">
+<div class="card">
+<small>DATA USED</small>
+<div class="value" id="data">0 MB</div>
+</div>
+<div class="card">
+<small>NETWORK</small>
+<div class="value" id="network">Checking</div>
+</div>
+</div>
+
+<div class="card">
+<h3>Connection settings</h3>
+<p>Network: <span id="carrier">Checking...</span></p>
+<p>Mode: Secure VPN (planned)</p>
+<p>Service: Free access (planned)</p>
+</div>
+</div>
+
+<script>
+let connected=false;
+function toggle(){
+connected=!connected;
+document.getElementById("status").textContent=
+connected?"DEMO CONNECTED":"NOT CONNECTED";
+document.getElementById("btn").textContent=
+connected?"DISCONNECT":"CONNECT";
+}
+document.getElementById("network").textContent=
+navigator.onLine?"Online":"Offline";
+document.getElementById("carrier").textContent=
+navigator.onLine?"Internet available":"No internet";
+</script>
+</body>
+</html>
